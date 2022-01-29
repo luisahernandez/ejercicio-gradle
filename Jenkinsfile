@@ -20,7 +20,7 @@ pipeline {
                         case 'Maven':
                             //def ejecucion = load 'maven.groovy'
                             //ejecucion.call()
-                            echo 'ok';
+                            echoo 'error forzado';
                         break;
                         case 'Gradle':
                             def ejecucion = load 'gradle.groovy'
