@@ -18,9 +18,9 @@ pipeline {
                   switch(params.compileTool)
                     {
                         case 'Maven':
-                            //def ejecucion = load 'maven.groovy'
-                            //ejecucion.call()
-                            echoo 'error forzado';
+                            def ejecucion = load 'maven.groovy'
+                            ejecucion.call()
+                          //  echoo 'error forzado';
                         break;
                         case 'Gradle':
                             def ejecucion = load 'gradle.groovy'
