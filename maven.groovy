@@ -44,7 +44,7 @@ def call(){
           ]
       ]
   }
-  stage("Paso 7: Descargar Nexus"){
+  stage("Paso 7: Descargar Nexuss"){
       sh ' curl -X GET -u $NEXUS_USER:$NEXUS_PASSWORD "http://nexus:10001/repository/devops-usach-nexus/com/devopsusach2020/DevOpsUsach2020/0.0.8/DevOpsUsach2020-0.0.8.jar" -O'
   }
   stage("Paso 8: Levantar Artefacto Jar"){
