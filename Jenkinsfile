@@ -28,7 +28,6 @@ pipeline {
                     }
                 }
             }
-        }
         post {
                 always {
                     sh "echo 'fase always executed post'"
@@ -40,5 +39,6 @@ pipeline {
                     slackSend teamDomain: 'dipdevopsusac-tr94431', tokenCredentialId: 'slack-me',message: 'luisa hernandez'+${env.JOB_NAME}+ ${env.BUILD_NUMBER}+'Operacion Fallida'
                 }
             }
+        }
     }
 }
