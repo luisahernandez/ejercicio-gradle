@@ -4,7 +4,7 @@
 	ejecucion.call()
 */
 def call(){
-  stage("Paso 1: Compliar"){
+  stage("Paso 1: Compliar maven"){
     sh "mvn clean compile -e"
   }
   stage("Paso 2: Testear"){

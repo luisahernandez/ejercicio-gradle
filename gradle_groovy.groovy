@@ -4,7 +4,7 @@
 	ejecucion.call()
 */
 def call(){
-    stage("Paso 1: Build && Test"){
+    stage("Paso 1: Build && Test gradle"){
         sh "gradle clean build"
     }
     stage("Paso 2: Sonar - Análisis Estático"){
