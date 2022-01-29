@@ -6,7 +6,7 @@
 def call(){
     stage("Paso 1: Build && Test gradle"){
         sh "gradle clean build"
-         slackSend teamDomain: 'dipdevopsusac-tr94431', tokenCredentialId: 'slack-me',message: 'Lhernandez'
+         
     }
     stage("Paso 2: Sonar - Análisis Estático"){
         sh "echo 'Análisis Estático!'"
@@ -46,7 +46,7 @@ def call(){
     }
     stage("Paso 7: Testear Artefacto - Dormir(Esperar 20sg) "){
         sh "sleep 20 && curl -X GET 'http://nexus:8081/rest/mscovid/test?msg=testing'"
-        slackSend teamDomain: 'dipdevopsusac-tr94431', tokenCredentialId: 'slack-me',message: 'Lhernandez'
+        
     }
 }
 
