@@ -18,8 +18,9 @@ pipeline {
                   switch(params.compileTool)
                     {
                         case 'Maven':
-                            def ejecucion = load 'maven.groovy'
-                            ejecucion.call()
+                            //def ejecucion = load 'maven.groovy'
+                            //ejecucion.call()
+                            echo 'ok';
                         break;
                         case 'Gradle':
                             def ejecucion = load 'gradle.groovy'
@@ -33,10 +34,10 @@ pipeline {
                     sh "echo 'fase always executed post'"
                 }
                 success {
-                    slackSend teamDomain: 'dipdevopsusac-tr94431', tokenCredentialId: 'slack-me',message: 'luisa hernandez'+${env.JOB_NAME}+ ${env.BUILD_NUMBER}+'Operacion Exitosa'
+                    slackSend teamDomain: 'dipdevopsusac-tr94431', tokenCredentialId: 'slack-me',message: 'luisa hernandez'+" "+ env.JOB_NAME+ env.BUILD_NUMBER+" "+'Operacion Exitosa'
                 }
                 failure {
-                    slackSend teamDomain: 'dipdevopsusac-tr94431', tokenCredentialId: 'slack-me',message: 'luisa hernandez'+${env.JOB_NAME}+ ${env.BUILD_NUMBER}+'Operacion Fallida'
+                    slackSend teamDomain: 'dipdevopsusac-tr94431', tokenCredentialId: 'slack-me',message: 'luisa hernandez'+" "+env.JOB_NAME+ env.BUILD_NUMBER+" "+'Operacion Fallida'
                 }
             }
         }
