@@ -32,7 +32,7 @@ def call(){
               mavenAssetList: [
                   [classifier: '',
                   extension: '.jar',
-                  filePath: 'build/DevOpsUsach2020-0.0.1.jar'
+                  filePath: 'build/DevOpsUsach2020-0.0.8.jar'
               ]
           ],
               mavenCoordinate: [
@@ -45,10 +45,10 @@ def call(){
       ]
   }
   stage("Paso 7: Descargar Nexus"){
-      sh ' curl -X GET -u $NEXUS_USER:$NEXUS_PASSWORD "http://nexus:10001/repository/devops-usach-nexus/com/devopsusach2020/DevOpsUsach2020/0.0.1/DevOpsUsach2020-0.0.1.jar" -O'
+      sh ' curl -X GET -u $NEXUS_USER:$NEXUS_PASSWORD "http://nexus:10001/repository/devops-usach-nexus/com/devopsusach2020/DevOpsUsach2020/0.0.1/DevOpsUsach2020-0.0.8.jar" -O'
   }
   stage("Paso 8: Levantar Artefacto Jar"){
-      sh 'nohup bash java -jar DevOpsUsach2020-0.0.1.jar & >/dev/null'
+      sh 'nohup bash java -jar DevOpsUsach2020-0.0.8.jar & >/dev/null'
   }
   stage("Paso 9: Testear Artefacto - Dormir(Esperar 20sg) "){
       sh "sleep 20 && curl -X GET 'http://nexus:10001/rest/mscovid/test?msg=testing'"
