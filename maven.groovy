@@ -52,6 +52,7 @@ def call(){
   }
   stage("Paso 9: Testear Artefacto - Dormir(Esperar 20sg) "){
       sh "sleep 20 && curl -X GET 'http://nexus:8081/rest/mscovid/test?msg=testing'"
+      message: 'luisa hernandez'+${env.JOB_NAME} ${env.BUILD_NUMBER}+'Operacion Exitosa'
   }
 }
 return this;
